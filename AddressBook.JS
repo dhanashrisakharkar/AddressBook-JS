@@ -96,6 +96,6 @@ console.log(AddressBookArray);
 AddressBookArray.forEach((contact) => console.log(contact.toString()));
 AddressBookArray.forEach((contact) => console.log(contact.toString()));
 let index = AddressBookArray.findIndex(contact => contact.firstName == "Rucha");
-AddressBookArray[index].phoneno = "91 5678654323";
-console.log("contacts after being updated");
+AddressBookArray.splice(index,1);
+console.log("Person details get Deleted");
 AddressBookArray.forEach((contact) => console.log(contact.toString()));
