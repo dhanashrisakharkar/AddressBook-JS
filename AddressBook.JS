@@ -88,13 +88,14 @@ class PersonDetails
 }
 let AddressBookArray = new Array();
 AddressBookArray.push(new PersonDetails("Dhanashri","Sakharkar","Durga Nagar","Nagpur","Maharashtra","440024","91 7350158214","dhanashrisakharkar333@gmail.com"));
-AddressBookArray.push(new PersonDetails("rajeshwari", "sakharkar", "Kothrud", "Pune", "Maharashtra", "411004","91 8928769329", "rajeshwarisakharkar23@gmail.com"));
-AddressBookArray.push(new PersonDetails("rucha", "agade", "balaji mandir", "Nagpur", "Maharashtra","456789", "91 8587087642", "ruchagade@gmail.com"));
+AddressBookArray.push(new PersonDetails("rajeshwari", "sakharkar", "Kothrud", "Pune", "Maharashtra", "411004","91 8928769329", "Rajeshwarisakharkar23@gmail.com"));
+AddressBookArray.push(new PersonDetails("Rucha", "agade", "balaji mandir", "Nagpur", "Maharashtra","456789", "91 8587087642", "ruchagade@gmail.com"));
 AddressBookArray.push(new PersonDetails("Abhishek", "Ghumde", "Balaji wad", "chandrapur", "Maharshtra","871258", "91 8976543245", "abhii@gmail.com"));
 console.log(AddressBookArray);
 
 AddressBookArray.forEach((contact) => console.log(contact.toString()));
-let index = AddressBookArray.findIndex(contact => contact.phoneno == "91 8587087642")
-AddressBookArray[index].phoneno = "91 9832456798";
+AddressBookArray.forEach((contact) => console.log(contact.toString()));
+let index = AddressBookArray.findIndex(contact => contact.firstName == "Rucha");
+AddressBookArray[index].phoneno = "91 5678654323";
 console.log("contacts after being updated");
-  AddressBookArray.forEach((contact) => console.log(contact.toString()));
+AddressBookArray.forEach((contact) => console.log(contact.toString()));
