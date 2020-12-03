@@ -93,9 +93,14 @@ AddressBookArray.push(new PersonDetails("Rucha", "agade", "balaji mandir", "Nagp
 AddressBookArray.push(new PersonDetails("Abhishek", "Ghumde", "Balaji wad", "chandrapur", "Maharshtra","871258", "91 8976543245", "abhii@gmail.com"));
 console.log(AddressBookArray);
 
-AddressBookArray.forEach((contact) => console.log(contact.toString()));
-AddressBookArray.forEach((contact) => console.log(contact.toString()));
-let index = AddressBookArray.findIndex(contact => contact.firstName == "Rucha");
-AddressBookArray.splice(index,1);
-console.log("Person details get Deleted");
-AddressBookArray.forEach((contact) => console.log(contact.toString()));
+let NoOfContacts=0;
+function TotalContact (AddressBookArray)
+{
+  if(AddressBookArray != null)
+  {
+    NoOfContacts++;
+    return NoOfContacts;
+  }
+}
+AddressBookArray.reduce(TotalContact,1);
+console.log("Total No of Contacts In Array is: "+NoOfContacts);
