@@ -93,14 +93,14 @@ AddressBookArray.push(new PersonDetails("Rucha", "agade", "balaji mandir", "Nagp
 AddressBookArray.push(new PersonDetails("Abhishek", "Ghumde", "Balaji wad", "chandrapur", "Maharshtra","871258", "91 8976543245", "abhii@gmail.com"));
 console.log(AddressBookArray);
 
-let NoOfContacts=0;
-function TotalContact (AddressBookArray)
-{
-  if(AddressBookArray != null)
-  {
-    NoOfContacts++;
-    return NoOfContacts;
+let duplicateContact = 0;
+  function CheckContactCheck(contact) {
+    if (contact.firstName == "Akshay")
+      duplicateContact++;
+    return duplicateContact ;
   }
-}
-AddressBookArray.reduce(TotalContact,1);
-console.log("Total No of Contacts In Array is: "+NoOfContacts);
+  AddressBookArray.forEach((contact) => CheckContactCheck(contact));
+  if (duplicateContact == 0)
+    console.log("not a duplicate contact");
+  else
+    console.log("duplicate contact");
