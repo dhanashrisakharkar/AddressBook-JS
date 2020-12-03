@@ -95,7 +95,7 @@ console.log(AddressBookArray);
 
 let duplicateContact = 0;
   function CheckContactCheck(contact) {
-    if (contact.firstName == "Akshay")
+    if (contact.firstName == "Dhanashri")
       duplicateContact++;
     return duplicateContact ;
   }
