@@ -97,12 +97,38 @@ console.log("Contact By State Maharashtra")
   let citycontact = AddressBookArray.filter((contact) => contact.state.includes("Maharashtra"));
   console.log(citycontact.toString());
 
-  function SearchByState(contact) {
-    if (contact.state == "Maharashtra") {
-      console.log(contact.toString());
-      numberOfState++;
+  function SortByName() {
+    for (let contactDetails in AddressBookArray) {
+      AddressBookArray.sort(contactDetails.firstName);
     }
+    AddressBookArray.forEach((contact) => console.log(contact.toString()));
   }
-  console.log("Count By State ")
-  AddressBookArray.filter(SearchByState);
-  console.log("counts of state " + numberOfState);
+  function SortByCity() {
+    for (let contactDetails in AddressBookArray) {
+      AddressBookArray.sort(contactDetails.city);
+    }
+  AddressBookArray.forEach((contact) => console.log(contact.toString()));
+  }
+  function SortByState() {
+    for (let contactDetails in AddressBookArray) {
+      AddressBookArray.sort(contactDetails.state);
+    }
+    AddressBookArray.forEach((contact) => console.log(contact.toString()));
+  }
+  function SortByZip() {
+    for (let contactDetails in AddressBookArray) {
+      AddressBookArray.sort(contactDetails.zip);
+    }
+    AddressBookArray.forEach((contact) => console.log(contact.toString()));
+  }
+  console.log("Sorting by firstName");
+  SortByName();
+  console.log("Sort By City")
+  SortByCity();
+  console.log("Sort By State")
+  SortByState();
+  console.log("Sort By Zip")
+  SortByZip();
+
+
+
