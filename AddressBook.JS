@@ -93,16 +93,16 @@ AddressBookArray.push(new PersonDetails("Rucha", "agade", "balaji mandir", "Nagp
 AddressBookArray.push(new PersonDetails("Abhishek", "Ghumde", "Balaji wad", "chandrapur", "Maharshtra","871258", "91 8976543245", "abhii@gmail.com"));
 console.log(AddressBookArray);
 
-    var numberOfCity = 0;
-    var numberOfState = 0;
-    console.log("");
-    console.log("Contact by City chandrapur")
-    function checkCity(checkCity) {
-      if (checkCity.city == "Nagpur") {
-        console.log(checkCity.toString());
-        numberOfCity++;
-      }
-    }
-    AddressBookArray.filter(checkCity);
-    console.log("contacts by city " + numberOfCity);
-    
+console.log("contact details by city or state using map");
+function CityMap(contact) {
+  return contact.city + " -> " + contact.firstName + "  " + contact.lastName;
+}
+let addressCityMap = AddressBookArray.map(CityMap);
+console.log(addressCityMap);
+
+//by city
+function StateMap(Details) {
+  return Details.state + " -> " + Details.firstName + "  " + Details.lastName;
+}
+let addressStateMap = AddressBookArray.map(StateMap);
+console.log(addressStateMap);
