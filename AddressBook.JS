@@ -92,17 +92,17 @@ AddressBookArray.push(new PersonDetails("rajeshwari", "sakharkar", "Kothrud", "P
 AddressBookArray.push(new PersonDetails("Rucha", "agade", "balaji mandir", "Nagpur", "Maharashtra","456789", "91 8587087642", "ruchagade@gmail.com"));
 AddressBookArray.push(new PersonDetails("Abhishek", "Ghumde", "Balaji wad", "chandrapur", "Maharshtra","871258", "91 8976543245", "abhii@gmail.com"));
 console.log(AddressBookArray);
+let numberOfState=0;
+console.log("Contact By State Maharashtra")
+  let citycontact = AddressBookArray.filter((contact) => contact.state.includes("Maharashtra"));
+  console.log(citycontact.toString());
 
-console.log("contact details by city or state using map");
-function CityMap(contact) {
-  return contact.city + " -> " + contact.firstName + "  " + contact.lastName;
-}
-let addressCityMap = AddressBookArray.map(CityMap);
-console.log(addressCityMap);
-
-//by city
-function StateMap(Details) {
-  return Details.state + " -> " + Details.firstName + "  " + Details.lastName;
-}
-let addressStateMap = AddressBookArray.map(StateMap);
-console.log(addressStateMap);
+  function SearchByState(contact) {
+    if (contact.state == "Maharashtra") {
+      console.log(contact.toString());
+      numberOfState++;
+    }
+  }
+  console.log("Count By State ")
+  AddressBookArray.filter(SearchByState);
+  console.log("counts of state " + numberOfState);
