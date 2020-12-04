@@ -93,14 +93,16 @@ AddressBookArray.push(new PersonDetails("Rucha", "agade", "balaji mandir", "Nagp
 AddressBookArray.push(new PersonDetails("Abhishek", "Ghumde", "Balaji wad", "chandrapur", "Maharshtra","871258", "91 8976543245", "abhii@gmail.com"));
 console.log(AddressBookArray);
 
-let duplicateContact = 0;
-  function CheckContactCheck(contact) {
-    if (contact.firstName == "Dhanashri")
-      duplicateContact++;
-    return duplicateContact ;
-  }
-  AddressBookArray.forEach((contact) => CheckContactCheck(contact));
-  if (duplicateContact == 0)
-    console.log("not a duplicate contact");
-  else
-    console.log("duplicate contact");
+    var numberOfCity = 0;
+    var numberOfState = 0;
+    console.log("");
+    console.log("Contact by City chandrapur")
+    function checkCity(checkCity) {
+      if (checkCity.city == "Nagpur") {
+        console.log(checkCity.toString());
+        numberOfCity++;
+      }
+    }
+    AddressBookArray.filter(checkCity);
+    console.log("contacts by city " + numberOfCity);
+    
